@@ -1,0 +1,184 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="zxx">
+
+{% block head %}
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<link rel="stylesheet" href="{% static 'assets/css/animate.min.css' %}">
+<link rel="stylesheet" href="{% static 'assets/css/bootstrap.min.css' %}">
+<link rel="stylesheet" href="{% static 'assets/css/fontawsome.min.css' %}">
+<link rel="stylesheet" href="{% static 'assets/fonts/flaticon.css' %}">
+<link rel="stylesheet" href="{% static 'assets/css/meanmenu.min.css' %}">
+<link rel="stylesheet" href="{% static 'assets/css/owl.carousel.min.css' %}">
+<link rel="stylesheet" href="{% static 'assets/css/nice-select.min.css' %}">
+<link rel="stylesheet" href="{% static 'assets/css/owl.theme.default.min.css' %}">
+<link rel="stylesheet" href="{% static 'assets/css/magnific-popup.min.css' %}">
+<link rel="stylesheet" href="{% static 'assets/css/jquery-ui.min.css' %}">
+<link rel="stylesheet" href="{% static 'assets/css/odometer.min.css' %}">
+<link rel="stylesheet" href="{% static 'assets/css/style.css' %}">
+<link rel="stylesheet" href="{% static 'assets/css/responsive.css' %}">
+<title>{%block title %} {% endblock %}</title>
+</head>
+{% endblock %}
+
+<body>
+{% block topbar_navbar %}
+
+<div class="navbar-area">
+
+<div class="main-responsive-nav">
+<div class="container-fluid plr-100">
+<div class="mobile-nav">
+<a href="#" class="logo"><img src="" alt="LOGO" /></a>
+<ul class="menu-sidebar menu-small-device">
+<li>
+</li>
+<li><a class="default-button" href="#">Nous contacter <i class="fas fa-angle-right"></i></a></li>
+</ul>
+</div>
+</div>
+</div>
+
+<div class="main-nav plr-100">
+<div class="container-fluid">
+<nav class="navbar navbar-expand-md navbar-light">
+<a class="navbar-brand" href="#">
+<img src="" alt="LOGO" />
+</a>
+<div class="collapse navbar-collapse mean-menu" id="navbarSupportedContent">
+<ul class="navbar-nav">
+<li class="nav-item ">
+<a href="#" class="nav-link">Accueil</a>
+
+</li>
+
+<li class="nav-item">
+<a href="#" class="nav-link ">Services</a>
+</li>
+<li class="nav-item">
+<a href="#" class="nav-link ">Blog</a>
+</li>
+<li class="nav-item">
+<a href="#" class="nav-link ">Nous conctater</a>
+</li>
+<li class="nav-item"><a href="#" class="nav-link">A propos de nous</a></li>
+</ul>
+<div class="menu-sidebar">
+<ul>
+<li><a class="default-button" href="#">Newsletter</a></li>
+</ul>
+</div>
+</div>
+</nav>
+</div>
+</div>
+</div>
+{% endblock %}
+
+{% block banner %}
+
+{% endblock %}
+
+
+{% block central %}
+
+{% endblock %}
+
+
+{% block footer %}
+<section class="footer">
+<div class="container">
+<div class="footer-content ptb-100">
+<div class="row">
+<div class="col-lg-3 col-md-6 col-sm-6 col-12">
+<div class="footer-logo-area">
+<a href="#"><img src="" alt="LOGO"></a>
+<p>Lorem ipsum dolor sit amet, consec tetur adipiscing elit tempor incididunt labore dolore magna aliqua consec tetur adipiscing elite sed do labor.</p>
+<div class="footer-social-area">
+<ul>
+<li><span>Nous suivre: </span></li>
+<li><a href="#" target="_blank"><i class="fab fa-facebook-f"></i></a></li>
+<li><a href="#" target="_blank"><i class="fab fa-linkedin-in"></i></a></li>
+<li><a href="#" target="_blank"><i class="fab fa-twitter"></i></a></li>
+<li><a href="#" target="_blank"><i class="fab fa-instagram"></i></a></li>
+</ul>
+</div>
+</div>
+</div>
+<div class="col-lg-3 col-md-6 col-sm-6 col-12">
+<div class="footer-links footer-contact">
+<h3>Nous contacter</h3>
+<div class="footer-contact-card">
+<i class="fas fa-map-marker-alt"></i>
+<h5>Location: </h5>
+<p><a href="#" target="_blank">Yaounde Cameroun</a></p>
+</div>
+<div class="footer-contact-card">
+<i class="fas fa-envelope"></i>
+<h5>Email: </h5>
+<p><a href="#"><span class="" data-cfemail="3d4e484d4d524f497d5058594752135e5250">info@mail.com</span></a></p>
+</div>
+<div class="footer-contact-card">
+<i class="fas fa-phone-alt"></i>
+<h5>Telephone: </h5>
+<p><a href="tel:699-999-999">699-999-999</a></p>
+</div>
+</div>
+</div>
+<div class="col-lg-3 col-md-6 col-sm-6 col-12">
+<div class="footer-links footer-quick-links">
+<h3>Liens</h3>
+<ul>
+<li><i class="fas fa-angle-right"></i> <a href="#">Service</a> </li>
+<li><i class="fas fa-angle-right"></i> <a href="#">A propos de nous</a></li>
+<li><i class="fas fa-angle-right"></i> <a href="#">Contact</a></li>
+</ul>
+</div>
+</div>
+<div class="col-lg-3 col-md-6 col-sm-6 col-12">
+<div class="footer-links footer-newsletter">
+<h3>Souscrire à notre newsletter</h3>
+<p>Veuillez vous inscrire ici pour ne rien manquer de nos actualités!</p>
+<form class="newsletter-form" data-toggle="validator">
+<input type="email" class="input-newsletter form-control" placeholder="Votre Email" name="EMAIL" required autocomplete="off">
+<button class="default-button news-btn">Souscrire maintenant</button>
+<div id="validator-newsletter" class="form-result"></div>
+</form>
+</div>
+</div>
+</div>
+</div>
+<div class="copyright">
+<p>© <strong>KIMI SARL</strong> Tout droits réservés par <a target="_blank" href="">KIMI SARL</a></p>
+</div>
+</div>
+</section>
+
+
+<div class="go-top"><i class="fas fa-chevron-up"></i></div>
+{% endblock %}
+
+{% block script %}
+<script src="{% static 'assets/js/jquery.min.js' %}"></script>
+<script src="{% static 'assets/js/jquery-ui.min.js' %}"></script>
+<script src="{% static 'assets/js/bootstrap.bundle.min.js' %}"></script>
+<script src="{% static 'assets/js/meanmenu.js' %}"></script>
+<script src="{% static 'assets/js/owl.carousel.min.js' %}"></script>
+<script src="{% static 'assets/js/magnific-popup.min.js' %}"></script>
+<script src="{% static 'assets/js/TweenMax.js' %}"></script>
+<script src="{% static 'assets/js/nice-select.min.js' %}"></script>
+<script src="{% static 'assets/js/form-validator.min.js' %}"></script>
+<script src="{% static 'assets/js/contact-form-script.js' %}"></script>
+<script src="{% static 'assets/js/ajaxchimp.min.js' %}"></script>
+<script src="{% static 'assets/js/owl.carousel2.thumbs.min.js' %}"></script>
+<script src="{% static 'assets/js/appear.min.js' %}"></script>
+<script src="{% static 'assets/js/odometer.min.js' %}"></script>
+<script src="{% static 'assets/js/custom.js' %}"></script>
+</body>
+
+</html>
+{% endblock %}
