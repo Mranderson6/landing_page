@@ -393,7 +393,7 @@
 .large_text{
 	font-size:70px;
 	font-weight:bold;
-	color:#fff;
+	color:#e8e80b;
 	line-height: 70px;
 	text-transform:uppercase;
 	margin-bottom:20px;
@@ -1108,7 +1108,7 @@
 }
 .city_jobs_wrap{
 	position:relative;
-	background-image:url("images/job-bg.png");
+	background-image:url("/static/assets/images/monumentPortrait.jpg");
 	background-position:top left;
 	background-repeat:no-repeat;
 	background-size:100%;
