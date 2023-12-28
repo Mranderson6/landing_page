@@ -1,273 +1,741 @@
-(function ($) {
-    "use strict";
-    // for sticky navbar
-    $(window).scroll(function () {
-        if ($(window).scrollTop() > 0) {
-            $(".navbar-area").addClass("sticky");
-        } else {
-            $(".navbar-area").removeClass("sticky");
-        }
-    });
-    $(window).scroll(function () {
-        if ($(window).scrollTop() > 0) {
-            $(".navbar-area .main-nav").addClass("sticky");
-        } else {
-            $(".navbar-area .main-nav").removeClass("sticky");
-        }
-    });
-
-    // popup button
-    $('.popup-button').click(function () {
-        $('.popup').css('visibility', 'visible');
-        $('.popup-content').addClass('hi');
-    })
-    $('#popup-close').click(function () {
-        $('.popup').css('visibility', 'hidden');
-        $('.popup-content').removeClass('hi');
-    })
-    
-
-    // Mean Menu
-    $(".mean-menu").meanmenu({
-        meanScreenWidth: "1199",
-    });
-
-    $(".service-slider-area-1").owlCarousel({
-        autoplayHoverPause: true,
-        autoplaySpeed: 2000,
-        autoplay: true,
-        loop: true,
-        dots: false,
-        nav: true,
-        navText: ['<i class="fas fa-long-arrow-alt-left"></i>', '<i class="fas fa-long-arrow-alt-right"></i>'],
-        responsive: {
-            0: {
-                items: 1,
-            },
-            768: {
-                items: 2,
-            },
-            992: {
-                items: 2,
-            },
-            1200: {
-                items: 3,
-            },
-        }
-    });
-
-    $(".service-slider-area").owlCarousel({
-        autoplayHoverPause: true,
-        autoplaySpeed: 2000,
-        autoplay: true,
-        loop: true,
-        dots: false,
-        margin: 30,
-        nav: true,
-        navText: ['<i class="fas fa-long-arrow-alt-left"></i>', '<i class="fas fa-long-arrow-alt-right"></i>'],
-        responsive: {
-            0: {
-                items: 1,
-            },
-            768: {
-                items: 2,
-            },
-            992: {
-                items: 3,
-            },
-            1200: {
-                items: 3,
-            },
-        }
-    });
-
-    $(".events-slider-area").owlCarousel({
-        autoplayHoverPause: true,
-        autoplaySpeed: 2000,
-        autoplay: true,
-        loop: true,
-        dots: false,
-        margin: 30,
-        nav: true,
-        navText: ['<i class="fas fa-long-arrow-alt-left"></i>', '<i class="fas fa-long-arrow-alt-right"></i>'],
-        responsive: {
-            0: {
-                items: 1,
-            },
-            768: {
-                items: 2,
-            },
-            992: {
-                items: 2,
-            },
-            1200: {
-                items: 3,
-            },
-        }
-    });
-
-    $(".feedback-slider-area").owlCarousel({
-        autoplayHoverPause: true,
-        autoplaySpeed: 2000,
-        autoplay: true,
-        loop: true,
-        dots: false,
-        nav: true,
-        navText: ['<i class="fas fa-long-arrow-alt-left"></i>', '<i class="fas fa-long-arrow-alt-right"></i>'],
-        responsive: {
-            0: {
-                items: 1,
-            },
-            768: {
-                items: 2,
-            },
-            992: {
-                items: 2,
-            },
-        }
-    });
-
-    $(".feedback-slider-area-2").owlCarousel({
-        autoplayHoverPause: true,
-        autoplaySpeed: 2000,
-        autoplay: true,
-        loop: true,
-        dots: true,
-        responsive: {
-            0: {
-                items: 1,
-            },
-            768: {
-                items: 2,
-            },
-            992: {
-                items: 3,
-            },
-            1200: {
-                items: 3,
-            }
-        }
-    });
-
-
-
-    // Video PopUp
-    $(".video-popup").magnificPopup({
-        type: "iframe",
-    });
-
-    // $('input[type="number"]').niceNumber();
-    
-    // language select
-    $("select").niceSelect();
-
-    // TweenMax JS
-    $('.main-banner').mousemove(function(e){
-        var wx = $(window).width();
-        var wy = $(window).height();
-        var x = e.pageX - this.offsetLeft;
-        var y = e.pageY - this.offsetTop;
-        var newx = x - wx/2;
-        var newy = y - wy/2;
-        $('.shape3,.shape4,.shape5').each(function(){
-            var speed = $(this).attr('data-speed');
-            if($(this).attr('data-revert')) speed *= -.4;
-            TweenMax.to($(this), 1, {x: (1 - newx*speed), y: (1 - newy*speed)});
+jQuery(document).ready(function($){
+	"use strict";
+	
+	/*
+	==============================================================
+	 COUNTDOWN  Script Start
+	==============================================================
+	*/
+	
+	if($('.countdown').length){
+		$('.countdown').downCount({ date:'8/8/2018 12:00:00', offset: +1 });
+	}
+ 
+	/*
+  ==============================================================
+     Counter Script Start
+  ==============================================================
+  */
+    if($('.counter').length){
+        $('.counter').counterUp({
+          delay: 20,
+          time: 1000
         });
-    });
+    }
+	
+	
 
-    $('.home-banner').mousemove(function(e){
-        var wx = $(window).width();
-        var wy = $(window).height();
-        var x = e.pageX - this.offsetLeft;
-        var y = e.pageY - this.offsetTop;
-        var newx = x - wx/2;
-        var newy = y - wy/2;
-        $('.shape1,.shape2,.shape3').each(function(){
-            var speed = $(this).attr('data-speed');
-            if($(this).attr('data-revert')) speed *= -.4;
-            TweenMax.to($(this), 1, {x: (1 - newx*speed), y: (1 - newy*speed)});
+  /*
+    =======================================================================
+         Pretty Photo Script Script
+    =======================================================================
+  */
+    if($("a[data-rel^='prettyPhoto']").length){
+      $("a[data-rel^='prettyPhoto']").prettyPhoto();
+    }
+ 
+
+
+    /*
+    ==============================================================
+        DL Responsive Menu
+    ==============================================================
+    */
+    if(typeof($.fn.dlmenu) == 'function'){
+      $('#kode-responsive-navigation').each(function(){
+        $(this).find('.dl-submenu').each(function(){
+        if( $(this).siblings('a').attr('href') && $(this).siblings('a').attr('href') != '#' ){
+          var parent_nav = $('<li class="menu-item kode-parent-menu"></li>');
+          parent_nav.append($(this).siblings('a').clone());
+
+          $(this).prepend(parent_nav);
+        }
         });
-    });
+        $(this).dlmenu();
+      });
+    }
+	
+	
+	
+	jQuery('.tabs .tab-links a').on('click', function(e) {
+		var currentAttrValue = jQuery(this).attr('href');
 
-    // Subscribe form
-	$(".newsletter-form").validator().on("submit", function (event) {
-		if (event.isDefaultPrevented()) {
-			// handle the invalid form...
-			formErrorSub();
-			submitMSGSub(false, "Please enter your email correctly.");
-		} else {
-			// everything looks good!
-			event.preventDefault();
+		// Show/Hide Tabs
+		jQuery('.tabs ' + currentAttrValue).show().siblings().hide();
+
+		// Change/remove current tab to active
+		jQuery(this).parent('li').addClass('active').siblings().removeClass('active');
+
+		e.preventDefault();
+		
+		// Show/Hide Tabs
+		jQuery('.tabs ' + currentAttrValue).siblings().slideUp(800);
+		jQuery('.tabs ' + currentAttrValue).delay(800).slideDown(800);
+		
+		// Show/Hide Tabs
+		jQuery('.tabs ' + currentAttrValue).fadeIn(400).siblings().hide();
+	});
+
+
+  /*
+  ==============================================================
+      SLICK SLIDER 
+  ==============================================================
+  */
+  
+  if($('.city-news-slider').length){
+    $('.city-news-slider').slick({
+		slidesToShow: 1,
+		autoplay: true,
+		autoplaySpeed: 0,
+		speed: 10000,
+		cssEase:'linear',
+		responsive: [
+        {
+          breakpoint: 1024,
+          settings: {
+            slidesToShow: 1,
+            slidesToScroll: 1,
+            infinite: true,
+            dots: true
+          }
+        },
+        {
+          breakpoint: 600,
+          settings: {
+            slidesToShow: 2,
+            slidesToScroll: 2
+          }
+        },
+        {
+          breakpoint: 480,
+          settings: {
+            slidesToShow: 1,
+            slidesToScroll: 1
+          }
+        }
+		
+		
+        // You can unslick at a given breakpoint now by adding:
+        // settings: "unslick"
+        // instead of a settings object
+      ]
+    });
+  }
+  
+  
+  if($('.main-banner-slider').length){
+    $('.main-banner-slider').slick({
+		slidesToShow: 1,
+		autoplay: true,
+		speed: 1000,
+		fade:true,
+		responsive: [
+        {
+          breakpoint: 1024,
+          settings: {
+            slidesToShow: 1,
+            slidesToScroll: 1,
+            infinite: true,
+            dots: true
+          }
+        },
+        {
+          breakpoint: 600,
+          settings: {
+            slidesToShow: 1,
+            slidesToScroll: 1
+          }
+        },
+        {
+          breakpoint: 480,
+          settings: {
+            slidesToShow: 1,
+            slidesToScroll: 1
+          }
+        }
+		
+		
+        // You can unslick at a given breakpoint now by adding:
+        // settings: "unslick"
+        // instead of a settings object
+      ]
+    });
+  }
+  
+  if($('.city-department-slider').length){
+    $('.city-department-slider').slick({
+		slidesToShow: 1,
+		autoplay: true,
+		speed: 1000,
+		vertical:true,
+		responsive: [
+        {
+          breakpoint: 1024,
+          settings: {
+            slidesToShow: 2,
+            slidesToScroll: 2,
+            infinite: true,
+            dots: true
+          }
+        },
+        {
+          breakpoint: 600,
+          settings: {
+            slidesToShow: 2,
+            slidesToScroll: 2
+          }
+        },
+        {
+          breakpoint: 480,
+          settings: {
+            slidesToShow: 1,
+            slidesToScroll: 1
+          }
+        }
+		
+		
+        // You can unslick at a given breakpoint now by adding:
+        // settings: "unslick"
+        // instead of a settings object
+      ]
+    });
+  }
+  
+  if($('.city-project-slider').length){
+    $('.city-project-slider').slick({
+		slidesToShow: 3,
+		centerMode: true,
+		autoplay: true,
+		speed: 800,
+		responsive: [
+        {
+          breakpoint: 1024,
+          settings: {
+            slidesToShow: 3,
+            slidesToScroll: 3,
+            infinite: true,
+            dots: true
+          }
+        },
+        {
+          breakpoint: 600,
+          settings: {
+            slidesToShow: 2,
+            slidesToScroll: 2
+          }
+        },
+        {
+          breakpoint: 480,
+          settings: {
+            slidesToShow: 1,
+            slidesToScroll: 1
+          }
+        }
+		
+		
+        // You can unslick at a given breakpoint now by adding:
+        // settings: "unslick"
+        // instead of a settings object
+      ]
+    });
+  }
+  
+  if($('.city-emergency-slide').length){
+    $('.city-emergency-slide').slick({
+		slidesToShow: 3,
+		autoplay: true,
+		speed: 800,
+		responsive: [
+        {
+          breakpoint: 1024,
+          settings: {
+            slidesToShow: 2,
+            slidesToScroll: 2,
+            infinite: true,
+            dots: true
+          }
+        },
+        {
+          breakpoint: 600,
+          settings: {
+            slidesToShow: 2,
+            slidesToScroll: 2
+          }
+        },
+        {
+          breakpoint: 480,
+          settings: {
+            slidesToShow: 1,
+            slidesToScroll: 1
+          }
+        }
+		
+		
+        // You can unslick at a given breakpoint now by adding:
+        // settings: "unslick"
+        // instead of a settings object
+      ]
+    });
+  }
+  
+  if($('.program-slider').length){
+    $('.program-slider').slick({
+		slidesToShow: 1,
+		autoplay: true,
+		speed: 800,
+		responsive: [
+        {
+          breakpoint: 1024,
+          settings: {
+            slidesToShow: 2,
+            slidesToScroll: 2,
+            infinite: true,
+            dots: true
+          }
+        },
+        {
+          breakpoint: 600,
+          settings: {
+            slidesToShow: 2,
+            slidesToScroll: 2
+          }
+        },
+        {
+          breakpoint: 480,
+          settings: {
+            slidesToShow: 1,
+            slidesToScroll: 1
+          }
+        }
+		
+		
+        // You can unslick at a given breakpoint now by adding:
+        // settings: "unslick"
+        // instead of a settings object
+      ]
+    });
+  }
+  
+  if($('.city-health2-slider').length){
+    $('.city-health2-slider').slick({
+		slidesToShow:4,
+		autoplay: true,
+		speed: 800,
+		responsive: [
+        {
+          breakpoint: 1024,
+          settings: {
+            slidesToShow: 2,
+            slidesToScroll: 2,
+            infinite: true,
+            dots: true
+          }
+        },
+        {
+          breakpoint: 600,
+          settings: {
+            slidesToShow: 2,
+            slidesToScroll: 2
+          }
+        },
+        {
+          breakpoint: 480,
+          settings: {
+            slidesToShow: 1,
+            slidesToScroll: 1
+          }
+        }
+		
+		
+        // You can unslick at a given breakpoint now by adding:
+        // settings: "unslick"
+        // instead of a settings object
+      ]
+    });
+  }
+  
+  if($('.city-health2-slider2').length){
+    $('.city-health2-slider2').slick({
+		slidesToShow:3,
+		autoplay: true,
+		speed: 800,
+		responsive: [
+        {
+          breakpoint: 1024,
+          settings: {
+            slidesToShow: 2,
+            slidesToScroll: 2,
+            infinite: true,
+            dots: true
+          }
+        },
+        {
+          breakpoint: 600,
+          settings: {
+            slidesToShow: 2,
+            slidesToScroll: 2
+          }
+        },
+        {
+          breakpoint: 480,
+          settings: {
+            slidesToShow: 1,
+            slidesToScroll: 1
+          }
+        }
+		
+		
+        // You can unslick at a given breakpoint now by adding:
+        // settings: "unslick"
+        // instead of a settings object
+      ]
+    });
+  }
+  
+  
+  if($('.blog-post-slider').length){
+    $('.blog-post-slider').slick({
+		slidesToShow:2,
+		autoplay: true,
+		speed: 800,
+		responsive: [
+        {
+          breakpoint: 1024,
+          settings: {
+            slidesToShow: 2,
+            slidesToScroll: 2,
+            infinite: true,
+            dots: true
+          }
+        },
+        {
+          breakpoint: 600,
+          settings: {
+            slidesToShow: 2,
+            slidesToScroll: 2
+          }
+        },
+        {
+          breakpoint: 480,
+          settings: {
+            slidesToShow: 1,
+            slidesToScroll: 1
+          }
+        }
+		
+		
+        // You can unslick at a given breakpoint now by adding:
+        // settings: "unslick"
+        // instead of a settings object
+      ]
+    });
+  }
+  
+	
+
+
+	$('.accordion-section-title').click(function(e) {
+		// Grab current anchor value
+		var currentAttrValue = $(this).attr('href');
+
+		if($(e.target).is('.active')) {
+			close_accordion_section();
+		}else {
+			close_accordion_section();
+
+			// Add active class to section title
+			$(this).addClass('active');
+			// Open up the hidden content panel
+			$('.accordion ' + currentAttrValue).slideDown(300).addClass('open');
+		}
+
+		e.preventDefault();
+	});
+
+ 
+ 
+	if($('select').length){
+	  $('select').niceSelect();
+	}
+	
+	
+	
+	
+/*================================================
+			slider start
+	=================================================*/ 
+	if($('.bx-pager').length){
+		$('.bx-pager').bxSlider({
+			
+		  auto:true,
+		  pagerCustom: '#bx-pager'
+		  
+		});
+	}
+
+/* ---------------------------------------------------------------------- */
+					/*	Click to Top 
+	/* ---------------------------------------------------------------------- */
+	if($('#child-topbtn').length){
+		$('#child-topbtn').on("click",function() {		
+			jQuery('html, body').animate({scrollTop : 0},800);
+			return false;
+		});
+	}
+	
+	
+	
+	if($('.city_top_navigation').length){
+		$(window).scroll(function() {
+		  if ($(this).scrollTop() > 40){ 
+				animate: true,		  
+			  $('.city_top_navigation').addClass("sticky");
+			  
+		  }
+		  else{
+			  $('.city_top_navigation').removeClass("sticky");
+		  }
+		});
+	}
+	
+	jQuery(window).load(function($) {
+		if(jQuery('#filterable-item-holder-1').length){
+			var filter_container = jQuery('#filterable-item-holder-1');
+
+			filter_container.children().css('position','relative');	
+			filter_container.masonry({
+				singleMode: true,
+				itemSelector: '.filterable-item:not(.hide)',
+				animate: true,
+				animationOptions:{ duration: 800, queue: false }
+			});	
+			jQuery(window).resize(function(){
+				var temp_width =  filter_container.children().filter(':first')();
+				filter_container.masonry({
+					columnWidth: temp_width,
+					singleMode: true,
+					itemSelector: '.filterable-item:not(.hide)',
+					animate: true,
+					animationOptions:{ duration: 800, queue: false }
+				});		
+			});	
+			jQuery('ul#filterable-item-filter-1 a').click(function(e){	
+
+				jQuery(this).addClass("active");
+				jQuery(this).parents("li").siblings().children("a").removeClass("active");
+				e.preventDefault();
+				
+				var select_filter = jQuery(this).attr('data-value');
+				
+				if( select_filter == "All" || jQuery(this).parent().index() == 0 ){		
+					filter_container.children().each(function(){
+						if( jQuery(this).hasClass('hide') ){
+							jQuery(this).removeClass('hide');
+							jQuery(this).fadeIn();
+						}
+					});
+				}else{
+					filter_container.children().not('.' + select_filter).each(function(){
+						if( !jQuery(this).hasClass('hide') ){
+							jQuery(this).addClass('hide');
+							jQuery(this).fadeOut();
+						}
+					});
+					filter_container.children('.' + select_filter).each(function(){
+						if( jQuery(this).hasClass('hide') ){
+							jQuery(this).removeClass('hide');
+							jQuery(this).fadeIn();
+						}
+					});
+				}
+				
+				filter_container.masonry();	
+				cornerStampSelector: '.corner-stamp'  
+				
+			});
 		}
 	});
-	function callbackFunction (resp) {
-		if (resp.result === "success") {
-			formSuccessSub();
-		}
-		else {
-			formErrorSub();
-		}
-	}
-	function formSuccessSub(){
-		$(".newsletter-form")[0].reset();
-		submitMSGSub(true, "Thank you for subscribing!");
-        setTimeout(function () {
-            $("#validator-newsletter").addClass('hide');
-        }, 4000);
-        setTimeout(function() {
-		    $("#validator-newsletter-2").addClass('hide');
-		}, 4000)
-	}
-	function formErrorSub(){
-		$(".newsletter-form").addClass("animated shake");
-		setTimeout(function() {
-			$(".newsletter-form").removeClass("animated shake");
-		}, 1000)
-	}
-	function submitMSGSub(valid, msg){
-		if(valid){
-			var msgClasses = "validation-success";
-		} else {
-			var msgClasses = "validation-danger";
-		}
-        $("#validator-newsletter").removeClass().addClass(msgClasses).text(msg);
-        $("#validator-newsletter-2").removeClass().addClass(msgClasses).text(msg);
-	}
-	$(".newsletter-form").ajaxChimp({
-		url: "https://envytheme.us20.list-manage.com/subscribe/post?u=60e1ffe2e8a68ce1204cd39a5&amp;id=42d6d188d9", // Your url MailChimp
-		callback: callbackFunction
-    });
-    
-
-    // Go to Top
-    $(function () {
-        // Scroll Event
-        $(window).on("scroll", function () {
-            var scrolled = $(window).scrollTop();
-            if (scrolled > 600) $(".go-top").addClass("active");
-            if (scrolled < 600) $(".go-top").removeClass("active");
-        });
-        // Click Event
-        $(".go-top").on("click", function () {
-            $("html, body").animate({ scrollTop: "0" }, 500);
-        });
-    });
-
-    $(".odometer").appear(function (e) {
-        var odo = $(".odometer");
-        odo.each(function () {
-            var countNumber = $(this).attr("data-count");
-            $(this).html(countNumber);
-        });
-    });
-
-    // WOW Animation JS
-    if ($(".wow").length) {
-        var wow = new WOW({
-            mobile: false,
-        });
-        wow.init();
+	
+	
+	/*		
+    =======================================================================
+            Map Script
+    =======================================================================
+  */
+    if($('#map-canvas').length){
+      google.maps.event.addDomListener(window, 'load', initialize);
     }
+	
+	
+	
+});	
 
-})(jQuery);
+	function close_accordion_section() {
+		$('.accordion .accordion-section-title').removeClass('active');
+		$('.accordion .accordion-section-content').slideUp(300).removeClass('open');
+	}
+
+  /*
+    =======================================================================
+         Map Custom Style Script Script
+    =======================================================================
+  */
+	function initialize() {
+		var MY_MAPTYPE_ID = 'custom_style';
+		var map;
+		var brooklyn = new google.maps.LatLng(40.6743890, -73.9455);
+		var featureOpts = [
+			{
+				"featureType": "administrative",
+				"elementType": "all",
+				"stylers": [
+						{
+								"saturation": "-100"
+						}
+				]
+		},
+		{
+				"featureType": "administrative.province",
+				"elementType": "all",
+				"stylers": [
+						{
+								"visibility": "off"
+						}
+				]
+		},
+		{
+				"featureType": "landscape",
+				"elementType": "all",
+				"stylers": [
+						{
+								"saturation": -100
+						},
+						{
+								"lightness": 65
+						},
+						{
+								"visibility": "on"
+						}
+				]
+		},
+		{
+				"featureType": "poi",
+				"elementType": "all",
+				"stylers": [
+						{
+								"saturation": -100
+						},
+						{
+								"lightness": "50"
+						},
+						{
+								"visibility": "simplified"
+						}
+				]
+		},
+		{
+				"featureType": "road",
+				"elementType": "all",
+				"stylers": [
+						{
+								"saturation": "-100"
+						}
+				]
+		},
+		{
+				"featureType": "road.highway",
+				"elementType": "all",
+				"stylers": [
+						{
+								"visibility": "simplified"
+						}
+				]
+		},
+		{
+				"featureType": "road.arterial",
+				"elementType": "all",
+				"stylers": [
+						{
+								"lightness": "30"
+						}
+				]
+		},
+		{
+				"featureType": "road.local",
+				"elementType": "all",
+				"stylers": [
+						{
+								"lightness": "40"
+						}
+				]
+		},
+		{
+				"featureType": "transit",
+				"elementType": "all",
+				"stylers": [
+						{
+								"saturation": -100
+						},
+						{
+								"visibility": "simplified"
+						}
+				]
+		},
+		{
+				"featureType": "water",
+				"elementType": "geometry",
+				"stylers": [
+						{
+								"hue": "#ffff00"
+						},
+						{
+								"lightness": -25
+						},
+						{
+								"saturation": -97
+						}
+				]
+		},
+		{
+				"featureType": "water",
+				"elementType": "labels",
+				"stylers": [
+						{
+								"lightness": -25
+						},
+						{
+								"saturation": -100
+						}
+				]
+		}
+		];
+
+		var mapOptions = {
+			zoom: 14,
+			scrollwheel: false,
+			center: brooklyn,
+			mapTypeControlOptions: {
+			  mapTypeIds: [google.maps.MapTypeId.ROADMAP, MY_MAPTYPE_ID]
+			},
+			mapTypeId: MY_MAPTYPE_ID
+		};
+
+
+		map = new google.maps.Map(document.getElementById('map-canvas'),
+			  mapOptions);
+
+		var styledMapOptions = {
+			name: 'Custom Style'
+		};
+
+		var customMapType = new google.maps.StyledMapType(featureOpts, styledMapOptions);
+
+		map.mapTypes.set(MY_MAPTYPE_ID, customMapType);
+		var marker=new google.maps.Marker({
+		  position:brooklyn,
+		  icon:'images/map.png'
+		  });
+
+		marker.setMap(map);
+	}
